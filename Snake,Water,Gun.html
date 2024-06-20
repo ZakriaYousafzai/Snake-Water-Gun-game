@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let score = 0;
+        let total = 0;
+
+        let confirmed = true;
+
+        while (confirmed) {
+
+            total++;
+
+            let arr = ["Snake", "Water", "Gun"];
+            let rand = Math.floor(Math.random() * 3);
+
+            let computerTurn = arr[rand];
+
+            let userTurn = prompt("Enter Snake, Water or Gun : ");
+
+            if (userTurn == computerTurn) {
+                confirmed = confirm("Its a Tie \n Computer chose '" + computerTurn + "' \n Do you want to continue : ");
+
+            } else if (userTurn == "snake" && computerTurn == "Water") {
+                score++;
+                confirmed = confirm("You won! Hurry \n Computer chose '" + computerTurn + "' \n Do you want to continue : ");
+
+            } else if (userTurn == "gun" && computerTurn == "Snake") {
+                score++;
+                confirmed = confirm("You won! Hurry \n Computer chose '" + computerTurn + "' \n Do you want to continue : ");
+
+            } else if (userTurn == "water" && computerTurn == "Gun") {
+                score++;
+                confirmed = confirm("You won! Hurry \n Computer chose '" + computerTurn + "' \n Do you want to continue : ");
+
+            } else {
+                confirmed = confirm("You Lose \n Computer chose '" + computerTurn + "' \n Do you want to continue : ");
+            }
+        }
+
+        alert('You won ' + score + " out of " + total);
+
+
+    </script>
+</body>
+
+</html>
